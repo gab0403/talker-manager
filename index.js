@@ -30,6 +30,8 @@ app.post('/login', validateEmailPass, loginTalkers);
 
 app.get('/talker', readTalker);
 
+app.get('/talker/search', validateToken, searchTalker);
+
 app.post('/talker', 
 validateToken,
 validateName,
@@ -47,8 +49,6 @@ validateWatchedAt,
 validateRate, changeTalker);
 
 app.get('/talker/:id', getTalkerById);
-
-app.get('/talker/search', validateToken, searchTalker);
 
 app.delete('/talker/:id', validateToken, deleteTalker);
 
